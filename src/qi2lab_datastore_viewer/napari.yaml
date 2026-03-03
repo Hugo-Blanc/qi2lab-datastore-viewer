@@ -1,0 +1,50 @@
+name: qi2lab-datastore-viewer
+display_name: qi2lab Datastore Viewer
+# use 'hidden' to remove plugin from napari hub search results
+visibility: public
+# see https://napari.org/stable/plugins/technical_references/manifest.html#fields for valid categories
+# categories: []
+contributions:
+  commands:
+    - id: qi2lab-datastore-viewer.get_reader
+      python_name: qi2lab_datastore_viewer._reader:napari_get_reader
+      title: Open data with qi2lab Datastore Viewer
+    - id: qi2lab-datastore-viewer.make_sample_data
+      python_name: qi2lab_datastore_viewer._sample_data:make_sample_data
+      title: Load sample data from qi2lab Datastore Viewer
+    - id: qi2lab-datastore-viewer.make_container_widget
+      python_name: qi2lab_datastore_viewer:ImageThreshold
+      title: Make threshold Container widget
+    - id: qi2lab-datastore-viewer.make_magic_widget
+      python_name: qi2lab_datastore_viewer:threshold_magic_widget
+      title: Make threshold magic widget
+    - id: qi2lab-datastore-viewer.make_function_widget
+      python_name: qi2lab_datastore_viewer:threshold_autogenerate_widget
+      title: Make threshold function widget
+    - id: qi2lab-datastore-viewer.make_qwidget
+      python_name: qi2lab_datastore_viewer:ExampleQWidget
+      title: Make example QWidget
+  readers:
+    - command: qi2lab-datastore-viewer.get_reader
+      accepts_directories: false
+      filename_patterns: ['*.npy']
+  sample_data:
+    - command: qi2lab-datastore-viewer.make_sample_data
+      display_name: qi2lab Datastore Viewer
+      key: unique_id.1
+  widgets:
+    - command: qi2lab-datastore-viewer.make_container_widget
+      display_name: Container Threshold
+    - command: qi2lab-datastore-viewer.make_magic_widget
+      display_name: Magic Threshold
+    - command: qi2lab-datastore-viewer.make_function_widget
+      autogenerate: true
+      display_name: Autogenerate Threshold
+    - command: qi2lab-datastore-viewer.make_qwidget
+      display_name: Example QWidget
+  menus:
+    napari/layers/segment:
+      - command: qi2lab-datastore-viewer.make_container_widget
+      - command: qi2lab-datastore-viewer.make_magic_widget
+      - command: qi2lab-datastore-viewer.make_function_widget
+      - command: qi2lab-datastore-viewer.make_qwidget
