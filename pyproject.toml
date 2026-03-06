@@ -83,28 +83,41 @@ xfail_strict = true
 log_cli_level = "INFO"
 testpaths = ["tests"]
 
-[tool.ruff]
-line-length = 79
-fix = true
-
 [tool.ruff.format]
 quote-style = "single"
 
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+src = ["src"]
+fix = true
+unsafe-fixes = true
+
+# https://docs.astral.sh/ruff/rules
 [tool.ruff.lint]
+pydocstyle = { convention = "numpy" }
 select = [
-    "E", "F", "W", #flake8
-    "UP", # pyupgrade
-    "I", # isort
-    "BLE", # flake8-blind-exception
-    "B", # flake8-bugbear
-    "A", # flake8-builtins
-    "C4", # flake8-comprehensions
-    "ISC", # flake8-implicit-str-concat
-    "G", # flake8-logging-format
-    "PIE", # flake8-pie
-    "SIM", # flake8-simplify
+    "E", # style errors
+    "W", # style warnings
+    "F", # flakes
+    # "D",    # pydocstyle
+    "D417", # Missing argument descriptions in Docstrings
+    "I",    # isort
+    "UP",   # pyupgrade
+    "C4",   # flake8-comprehensions
+    "B",    # flake8-bugbear
+    "A001", # flake8-builtins
+    "ANN",  # flake8-annotations
+    "RUF",  # ruff-specific rules
+    "TC",   # flake8-type-checking
+    "TID",  # flake8-tidy-imports
 ]
 ignore = [
+    "ANN401", # allow the use of Any type
+    "D401",   # First line should be in imperative mood
+    "E402",
     "E501", # line too long. handled by formatter
     "UP006", "UP007", # type annotation. As using magicgui require runtime type annotation then we disable this.
+
+
 ]

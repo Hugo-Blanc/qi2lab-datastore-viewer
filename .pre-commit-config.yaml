@@ -22,3 +22,9 @@ repos:
   #   rev: v1.19.0
   #   hooks:
   #     - id: mypy
+ci:
+  autofix_prs: true
+  autofix_commit_msg: '[pre-commit.ci] Fixing issues with pre-commit'
+  autoupdate_schedule: monthly
+  autoupdate_commit_msg: '[pre-commit.ci] pre-commit automatically updated revs.'
+  skip: []

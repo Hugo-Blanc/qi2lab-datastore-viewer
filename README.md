@@ -8,8 +8,10 @@
 [![napari hub](https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/qi2lab-datastore-viewer)](https://napari-hub.org/plugins/qi2lab-datastore-viewer)
 [![npe2](https://img.shields.io/badge/plugin-npe2-blue?link=https://napari.org/stable/plugins/index.html)](https://napari.org/stable/plugins/index.html)
 [![Copier](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-purple.json)](https://github.com/copier-org/copier)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/Hugo-Blanc/qi2lab-datastore-viewer/main.svg)](https://results.pre-commit.ci/latest/github/Hugo-Blanc/qi2lab-datastore-viewer/main)
 
-A plugin to monitor the qi2lab datastore state and visualize its components
+
+A napari plugin to monitor the qi2lab datastore state and visualize its components
 
 ----------------------------------
 

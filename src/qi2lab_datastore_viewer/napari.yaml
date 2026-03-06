@@ -1,9 +1,9 @@
 name: qi2lab-datastore-viewer
 display_name: qi2lab Datastore Viewer
 # use 'hidden' to remove plugin from napari hub search results
-visibility: public
+visibility: 'hidden'
 # see https://napari.org/stable/plugins/technical_references/manifest.html#fields for valid categories
-# categories: []
+categories: [Visualisation]
 contributions:
   commands:
     - id: qi2lab-datastore-viewer.get_reader
