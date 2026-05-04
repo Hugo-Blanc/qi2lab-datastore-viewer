@@ -8,7 +8,7 @@ from qi2lab_datastore_viewer._widget import (
 )
 
 
-def test_threshold_autogenerate_widget():
+def test_threshold_autogenerate_widget() -> None:
     # because our 'widget' is a pure function, we can call it and
     # test it independently of napari
     im_data = np.random.random((100, 100))
@@ -20,7 +20,7 @@ def test_threshold_autogenerate_widget():
 # make_napari_viewer is a pytest fixture that returns a napari viewer object
 # you don't need to import it, as long as napari is installed
 # in your testing environment
-def test_threshold_magic_widget(make_napari_viewer):
+def test_threshold_magic_widget(make_napari_viewer) -> None:
     viewer = make_napari_viewer()
     layer = viewer.add_image(np.random.random((100, 100)))
 
@@ -33,7 +33,7 @@ def test_threshold_magic_widget(make_napari_viewer):
     # etc.
 
 
-def test_image_threshold_widget(make_napari_viewer):
+def test_image_threshold_widget(make_napari_viewer) -> None:
     viewer = make_napari_viewer()
     layer = viewer.add_image(np.random.random((100, 100)))
     my_widget = ImageThreshold(viewer)
@@ -50,7 +50,7 @@ def test_image_threshold_widget(make_napari_viewer):
 
 
 # capsys is a pytest fixture that captures stdout and stderr output streams
-def test_example_q_widget(make_napari_viewer, capsys):
+def test_example_q_widget(make_napari_viewer, capsys) -> None:
     # make viewer and add an image layer using our fixture
     viewer = make_napari_viewer()
     viewer.add_image(np.random.random((100, 100)))
