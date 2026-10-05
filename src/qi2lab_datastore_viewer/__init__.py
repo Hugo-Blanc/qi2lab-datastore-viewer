@@ -14,10 +14,10 @@ from ._widget import (
 )
 
 __all__ = (
-    'napari_get_reader',
-    'make_sample_data',
     'ExampleQWidget',
     'ImageThreshold',
+    'make_sample_data',
+    'napari_get_reader',
     'threshold_autogenerate_widget',
     'threshold_magic_widget',
 )
