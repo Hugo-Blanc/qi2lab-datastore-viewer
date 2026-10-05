@@ -4,7 +4,7 @@ from qi2lab_datastore_viewer import napari_get_reader
 
 
 # tmp_path is a pytest fixture
-def test_reader(tmp_path):
+def test_reader(tmp_path) -> None:
     """An example of how you might test your plugin."""
 
     # write some fake data using your supported file format
@@ -26,7 +26,7 @@ def test_reader(tmp_path):
     np.testing.assert_allclose(original_data, layer_data_tuple[0])
 
 
-def test_get_reader_pass(tmp_path):
+def test_get_reader_pass(tmp_path) -> None:
     reader = napari_get_reader('fake.file')
     assert reader is None
 

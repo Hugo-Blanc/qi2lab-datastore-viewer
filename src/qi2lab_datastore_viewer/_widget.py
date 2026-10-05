@@ -54,9 +54,7 @@ def threshold_autogenerate_widget(
 # we specify a widget type for the threshold parameter
 # and use auto_call=True so the function is called whenever
 # the value of a parameter changes
-@magic_factory(
-    threshold={'widget_type': 'FloatSlider', 'max': 1}, auto_call=True
-)
+@magic_factory(threshold={'widget_type': 'FloatSlider', 'max': 1}, auto_call=True)
 def threshold_magic_widget(
     img_layer: 'napari.layers.Image', threshold: 'float'
 ) -> 'napari.types.LabelsData':
@@ -66,7 +64,7 @@ def threshold_magic_widget(
 # if we want even more control over our widget, we can use
 # magicgui `Container`
 class ImageThreshold(Container):
-    def __init__(self, viewer: 'napari.viewer.Viewer'):
+    def __init__(self, viewer: 'napari.viewer.Viewer') -> None:
         super().__init__()
         self._viewer = viewer
         # use create_widget to generate widgets from type annotations
@@ -94,7 +92,7 @@ class ImageThreshold(Container):
             ]
         )
 
-    def _threshold_im(self):
+    def _threshold_im(self) -> None:
         image_layer = self._image_layer_combo.value
         if image_layer is None:
             return
@@ -115,7 +113,7 @@ class ImageThreshold(Container):
 class ExampleQWidget(QWidget):
     # your QWidget.__init__ can optionally request the napari viewer instance
     # use a type annotation of 'napari.viewer.Viewer' for any parameter
-    def __init__(self, viewer: 'napari.viewer.Viewer'):
+    def __init__(self, viewer: 'napari.viewer.Viewer') -> None:
         super().__init__()
         self.viewer = viewer
 
@@ -125,5 +123,5 @@ class ExampleQWidget(QWidget):
         self.setLayout(QHBoxLayout())
         self.layout().addWidget(btn)
 
-    def _on_click(self):
+    def _on_click(self) -> None:
         print('napari has', len(self.viewer.layers), 'layers')
